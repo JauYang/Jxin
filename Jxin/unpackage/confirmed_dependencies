@@ -1,0 +1,74 @@
+{
+	"index.html": {
+		"href": "index.html",
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"images/user.png",
+			"fonts/mui.ttf",
+			"images/lironghao.png",
+			"images/zhangxueyou.png",
+			"images/chenyixun.png",
+			"aui/css/aui-indexed-list.css",
+			"aui/css/aui.css",
+			"aui/js/aui-indexed-list.js",
+			"aui/js/aui-tap.js",
+			"aui/js/api.js",
+			"aui/css/aui-iconfont.css",
+			"aui/css/aui_iconfont.ttf",
+			"images/1.png",
+			"images/erweima.png",
+			"css/login/default.css",
+			"css/login/styles.css"
+		],
+		"refer": [
+			"register.html",
+			"login.html"
+		],
+		"priority": 0
+	},
+	"login.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/login/default.css",
+			"css/login/styles.css"
+		],
+		"refer": [
+			"index.html",
+			"app/main.html"
+		]
+	},
+	"app/main.html": {
+		"resources": [
+			"aui/css/aui-iconfont.css",
+			"aui/js/aui-tap.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"aui/js/aui-indexed-list.js",
+			"aui/js/api.js",
+			"aui/css/aui-indexed-list.css",
+			"aui/css/aui.css",
+			"images/user.png",
+			"images/chenyixun.png",
+			"images/lironghao.png",
+			"images/1.png",
+			"images/zhangxueyou.png",
+			"images/erweima.png",
+			"aui/css/aui_iconfont.ttf"
+		]
+	},
+	"register.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/login/default.css",
+			"css/login/styles.css"
+		],
+		"refer": [
+			"login.html",
+			"index.html"
+		]
+	}
+}

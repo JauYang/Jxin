@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="../js/mui.min.js"></script>
+    <link href="../css/mui.min.css" rel="stylesheet"/>
+    
+    <!--
+    	作者：1079277561@qq.com
+    	时间：2016-06-16
+    	描述：通讯录效果，引入aui的资源文件
+    -->
+    <link rel="stylesheet" href="../aui/css/aui.css" />
+    <link rel="stylesheet" href="../aui/css/aui-indexed-list.css" />
+    <script type="text/javascript" charset="utf-8">
+      	mui.plusReady(function() {
+      		var self = plus.webview.currentWebview();
+	    	plus.nativeUI.toast("欢迎"+self.username+"登录简信！");
+	    	mui.back = function() {
+			    var main = plus.android.runtimeMainActivity();
+    			main.moveTaskToBack(true);
+			};
+//		    plus.key.addEventListener('backbutton', function(){
+//		        var main = plus.android.runtimeMainActivity();
+//  			main.moveTaskToBack(true);
+//		    }, false);
+		});
+    </script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav" style="background-color: #3e3e40;">
+	    <span style="color: #FFFFFF;margin-left: 4px;" class="mui-btn-link mui-pull-left">简  信</span>
+	    <span style="color: #FFFFFF;padding-right: 15px;" class="mui-icon mui-icon-plusempty mui-pull-right"></span>
+	    <span style="color: #FFFFFF;padding-right: 40px;" class="mui-icon mui-icon-search mui-pull-right"></span>
+	</header>
+	<nav class="mui-bar mui-bar-tab">
+	    <a class="mui-tab-item mui-active" href="#message">
+	        <span class="mui-icon mui-icon-chatboxes-filled"></span>
+	        <span class="mui-tab-label">消息</span>
+	    </a>
+	    <a class="mui-tab-item" href="#addressbook">
+	        <span class="mui-icon mui-icon-contact"></span>
+	        <span class="mui-tab-label">通讯录</span>
+	    </a>
+	    <a class="mui-tab-item" href="#find">
+	        <span class="mui-icon mui-icon-paperplane"></span>
+	        <span class="mui-tab-label">发现</span>
+	    </a>
+	    <a class="mui-tab-item" href="#mine">
+	        <span class="mui-icon mui-icon-person-filled"></span>
+	        <span class="mui-tab-label">我</span>
+	    </a>
+	</nav>
+	<div class="mui-content" style="background-color: #f4f4f4;">
+		<div id="message" class="mui-control-content mui-active">
+			<ul class="mui-table-view mui-table-view-striped mui-table-view-condensed">
+		        <li class="mui-table-view-cell">
+		            <div class="mui-table">
+		                <div class="mui-table-cell mui-col-xs-10">
+		                	<img width="42px" class="mui-media-object mui-pull-left" src="../images/user.png">
+		                    <div class="mui-media-body">
+								谦谦
+							</div>
+		                    <p class="mui-h6 mui-ellipsis">我的心愿是世界和平</p>
+		                </div>
+		                <div class="mui-table-cell mui-col-xs-2 mui-text-right">
+		                    <span class="mui-h5">12:25</span>
+		                </div>
+		            </div>
+		            <span style="top: 70%;" class="mui-badge mui-badge-danger">1</span>
+		        </li>
+		        <li class="mui-table-view-cell">
+		            <div class="mui-table">
+		                <div class="mui-table-cell mui-col-xs-10">
+		                	<img width="42px" class="mui-media-object mui-pull-left" src="../images/lironghao.png">
+		                    <div class="mui-media-body">
+								浩仔
+							</div>
+		                    <p class="mui-h6 mui-ellipsis">用完美的表情 为脆弱的城市而撑着</p>
+		                </div>
+		                <div class="mui-table-cell mui-col-xs-2 mui-text-right">
+		                    <span class="mui-h5">12:23</span>
+		                </div>
+		            </div>
+		            <span style="top: 70%;" class="mui-badge mui-badge-danger">1</span>
+		        </li>
+		         <li class="mui-table-view-cell">
+		            <div class="mui-table">
+		                <div class="mui-table-cell mui-col-xs-10">
+		                	<img width="42px" class="mui-media-object mui-pull-left" src="../images/chenyixun.png">
+		                    <div class="mui-media-body">
+								eason
+							</div>
+		                    <p class="mui-h6 mui-ellipsis">请用心听 不要说话</p>
+		                </div>
+		                <div class="mui-table-cell mui-col-xs-2 mui-text-right">
+		                    <span class="mui-h5">11:56</span>
+		                </div>
+		            </div>
+		            <span style="top: 70%;" class="mui-badge mui-badge-danger">1</span>
+		        </li>
+		         <li class="mui-table-view-cell">
+		            <div class="mui-table">
+		                <div class="mui-table-cell mui-col-xs-10">
+		                	<img width="42px" class="mui-media-object mui-pull-left" src="../images/zhangxueyou.png">
+		                    <div class="mui-media-body">
+								张学友
+							</div>
+		                    <p class="mui-h6 mui-ellipsis">慢慢 慢慢没有感觉</p>
+		                </div>
+		                <div class="mui-table-cell mui-col-xs-2 mui-text-right">
+		                    <span class="mui-h5">10:23</span>
+		                </div>
+		            </div>
+		            <span style="top: 70%;" class="mui-badge mui-badge-danger">1</span>
+		        </li>
+	        </ul>
+		</div>
+		<div id="addressbook" class="mui-control-content">
+			<div class="aui-searchbar-wrap fixed" id="group-search">
+		    </div>
+			<div class="aui-indexed-list">
+			    <ul class="aui-list-view aui-indexed-list-view aui-in" id="group-*" data-group="*">
+		            <li class="aui-list-view-cell">
+		                <i class="aui-iconfont aui-icon-friendadd aui-bg-info"></i>新朋友
+		            </li>
+		            <li class="aui-list-view-cell">
+		                <i class="aui-iconfont aui-icon-friend aui-bg-success"></i>群聊
+		            </li>
+		            <li class="aui-list-view-cell">
+		                <i class="aui-iconfont aui-icon-tag aui-bg-danger"></i>标签
+		            </li>
+		            <li class="aui-list-view-cell">
+		                <i class="aui-iconfont aui-icon-friendfamous aui-bg-warning"></i>公众号
+		            </li>
+			        <li class="aui-list-view-cell aui-indexed-list-view-group" id="group-E" data-group="E">E</li>
+			        <ul class="mui-table-view mui-table-view-striped mui-table-view-condensed">
+				        <li style="padding: 3px 15px;" class="mui-table-view-cell">
+				            <div class="mui-table">
+				                <div class="mui-table-cell mui-col-xs-10">
+				                	<img style="height: 35px;width:35px" class="mui-media-object mui-pull-left" src="../images/chenyixun.png">
+				                    <div style="padding: 5px 0px;" class="mui-media-body">
+										eason
+									</div>
+				                </div>
+				            </div>
+				        </li>
+				        <li style="padding: 3px 15px;" class="mui-table-view-cell">
+				            <div class="mui-table">
+				                <div class="mui-table-cell mui-col-xs-10">
+				                	<img style="height: 35px;width:35px" class="mui-media-object mui-pull-left" src="../images/chenyixun.png">
+				                    <div style="padding: 5px 0px;" class="mui-media-body">
+										eason
+									</div>
+				                </div>
+				            </div>
+				        </li>
+				        <li style="padding: 3px 15px;" class="mui-table-view-cell">
+				            <div class="mui-table">
+				                <div class="mui-table-cell mui-col-xs-10">
+				                	<img style="height: 35px;width:35px" class="mui-media-object mui-pull-left" src="../images/chenyixun.png">
+				                    <div style="padding: 5px 0px;" class="mui-media-body">
+										eason
+									</div>
+				                </div>
+				            </div>
+				        </li>
+				        <li style="padding: 3px 15px;" class="mui-table-view-cell">
+				            <div class="mui-table">
+				                <div class="mui-table-cell mui-col-xs-10">
+				                	<img style="height: 35px;width:35px" class="mui-media-object mui-pull-left" src="../images/chenyixun.png">
+				                    <div style="padding: 5px 0px;" class="mui-media-body">
+										eason
+									</div>
+				                </div>
+				            </div>
+				        </li>
+			        </ul>
+			        <li class="aui-list-view-cell aui-indexed-list-view-group" id="group-H" data-group="H">H</li>
+			        <ul class="mui-table-view mui-table-view-striped mui-table-view-condensed">
+				        <li style="padding: 3px 15px;" class="mui-table-view-cell">
+				            <div class="mui-table">
+				                <div class="mui-table-cell mui-col-xs-10">
+				                	<img style="height: 35px;width:35px" class="mui-media-object mui-pull-left" src="../images/lironghao.png">
+				                    <div style="padding: 5px 0px;" class="mui-media-body">
+										浩仔
+									</div>
+				                </div>
+				            </div>
+				        </li>
+				        <li style="padding: 3px 15px;" class="mui-table-view-cell">
+				            <div class="mui-table">
+				                <div class="mui-table-cell mui-col-xs-10">
+				                	<img style="height: 35px;width:35px" class="mui-media-object mui-pull-left" src="../images/lironghao.png">
+				                    <div style="padding: 5px 0px;" class="mui-media-body">
+										浩仔
+									</div>
+				                </div>
+				            </div>
+				        </li>
+				        <li style="padding: 3px 15px;" class="mui-table-view-cell">
+				            <div class="mui-table">
+				                <div class="mui-table-cell mui-col-xs-10">
+				                	<img style="height: 35px;width:35px" class="mui-media-object mui-pull-left" src="../images/lironghao.png">
+				                    <div style="padding: 5px 0px;" class="mui-media-body">
+										浩仔
+									</div>
+				                </div>
+				            </div>
+				        </li>
+				        <li style="padding: 3px 15px;" class="mui-table-view-cell">
+				            <div class="mui-table">
+				                <div class="mui-table-cell mui-col-xs-10">
+				                	<img style="height: 35px;width:35px" class="mui-media-object mui-pull-left" src="../images/lironghao.png">
+				                    <div style="padding: 5px 0px;" class="mui-media-body">
+										浩仔
+									</div>
+				                </div>
+				            </div>
+				        </li>
+			    	</ul>
+					<li class="aui-list-view-cell aui-indexed-list-view-group" id="group-Q" data-group="E">Q</li>
+					<ul class="mui-table-view mui-table-view-striped mui-table-view-condensed">
+				        <li style="padding: 3px 15px;" class="mui-table-view-cell">
+				            <div class="mui-table">
+				                <div class="mui-table-cell mui-col-xs-10">
+				                	<img style="height: 35px;width:35px" class="mui-media-object mui-pull-left" src="../images/user.png">
+				                    <div style="padding: 5px 0px;" class="mui-media-body">
+										谦谦
+									</div>
+				                </div>
+				            </div>
+				        </li>
+				        <li style="padding: 3px 15px;" class="mui-table-view-cell">
+				            <div class="mui-table">
+				                <div class="mui-table-cell mui-col-xs-10">
+				                	<img style="height: 35px;width:35px" class="mui-media-object mui-pull-left" src="../images/user.png">
+				                    <div style="padding: 5px 0px;" class="mui-media-body">
+										谦谦
+									</div>
+				                </div>
+				            </div>
+				        </li>
+				        <li style="padding: 3px 15px;" class="mui-table-view-cell">
+				            <div class="mui-table">
+				                <div class="mui-table-cell mui-col-xs-10">
+				                	<img style="height: 35px;width:35px" class="mui-media-object mui-pull-left" src="../images/user.png">
+				                    <div style="padding: 5px 0px;" class="mui-media-body">
+										谦谦
+									</div>
+				                </div>
+				            </div>
+				        </li>
+				        <li style="padding: 3px 15px;" class="mui-table-view-cell">
+				            <div class="mui-table">
+				                <div class="mui-table-cell mui-col-xs-10">
+				                	<img style="height: 35px;width:35px" class="mui-media-object mui-pull-left" src="../images/user.png">
+				                    <div style="padding: 5px 0px;" class="mui-media-body">
+										谦谦
+									</div>
+				                </div>
+				            </div>
+				        </li>
+			        </ul>
+					<li class="aui-list-view-cell aui-indexed-list-view-group" id="group-Z" data-group="Z">Z</li>
+					<ul class="mui-table-view mui-table-view-striped mui-table-view-condensed">
+						<li style="padding: 3px 15px;" class="mui-table-view-cell">
+				            <div class="mui-table">
+				                <div class="mui-table-cell mui-col-xs-10">
+				                	<img style="height: 35px;width:35px" class="mui-media-object mui-pull-left" src="../images/zhangxueyou.png">
+				                    <div style="padding: 5px 0px;" class="mui-media-body">
+										张学友
+									</div>
+				                </div>
+				            </div>
+				        </li>
+				        <li style="padding: 3px 15px;" class="mui-table-view-cell">
+				            <div class="mui-table">
+				                <div class="mui-table-cell mui-col-xs-10">
+				                	<img style="height: 35px;width:35px" class="mui-media-object mui-pull-left" src="../images/zhangxueyou.png">
+				                    <div style="padding: 5px 0px;" class="mui-media-body">
+										张学友
+									</div>
+				                </div>
+				            </div>
+				        </li>
+				        <li style="padding: 3px 15px;" class="mui-table-view-cell">
+				            <div class="mui-table">
+				                <div class="mui-table-cell mui-col-xs-10">
+				                	<img style="height: 35px;width:35px" class="mui-media-object mui-pull-left" src="../images/zhangxueyou.png">
+				                    <div style="padding: 5px 0px;" class="mui-media-body">
+										张学友
+									</div>
+				                </div>
+				            </div>
+				        </li>
+					</ul>
+					<li class="aui-list-view-cell aui-indexed-list-view-group" id="group-#" data-group="#">#</li>
+					<ul class="mui-table-view mui-table-view-striped mui-table-view-condensed">
+						<li style="padding: 3px 15px;" class="mui-table-view-cell">
+				            <div class="mui-table">
+				                <div class="mui-table-cell mui-col-xs-10">
+				                	<img style="height: 35px;width:35px" class="mui-media-object mui-pull-left" src="../images/1.png">
+				                    <div style="padding: 5px 0px;" class="mui-media-body">
+										~!~
+									</div>
+				                </div>
+				            </div>
+				        </li>
+				        <li style="padding: 3px 15px;" class="mui-table-view-cell">
+				            <div class="mui-table">
+				                <div class="mui-table-cell mui-col-xs-10">
+				                	<img style="height: 35px;width:35px" class="mui-media-object mui-pull-left" src="../images/1.png">
+				                    <div style="padding: 5px 0px;" class="mui-media-body">
+										~!~
+									</div>
+				                </div>
+				            </div>
+				        </li>
+				        <li style="padding: 3px 15px;" class="mui-table-view-cell">
+				            <div class="mui-table">
+				                <div class="mui-table-cell mui-col-xs-10">
+				                	<img style="height: 35px;width:35px" class="mui-media-object mui-pull-left" src="../images/1.png">
+				                    <div style="padding: 5px 0px;" class="mui-media-body">
+										~!~
+									</div>
+				                </div>
+				            </div>
+				        </li>
+					</ul>
+				</ul>
+			</div>
+			<div class="aui-indexed-list-toast"></div>
+			<div class="aui-indexed-list-bar">
+				<a data-value="A">A</a>
+				<a data-value="B">B</a>
+				<a data-value="C">C</a>
+				<a data-value="D">D</a>
+				<a data-value="E">E</a>
+				<a data-value="F">F</a>
+				<a data-value="G">G</a>
+				<a data-value="H">H</a>
+				<a data-value="I">I</a>
+				<a data-value="J">J</a>
+				<a data-value="K">K</a>
+				<a data-value="L">L</a>
+				<a data-value="M">M</a>
+				<a data-value="N">N</a>
+				<a data-value="O">O</a>
+				<a data-value="P">P</a>
+				<a data-value="Q">Q</a>
+				<a data-value="R">R</a>
+				<a data-value="S">S</a>
+				<a data-value="T">T</a>
+				<a data-value="U">U</a>
+				<a data-value="V">V</a>
+				<a data-value="W">W</a>
+				<a data-value="X">X</a>
+				<a data-value="Y">Y</a>
+				<a data-value="Z">Z</a>
+				<a data-value="#">#</a>
+			</div>
+		</div>
+		<div id="find" class="mui-control-content">
+			<div class="aui-searchbar-wrap fixed" id="group-search">
+		    </div>
+			<div class="aui-indexed-list">
+			    <ul class="aui-list-view aui-indexed-list-view aui-in">
+			        <li style="padding: 0px 15px;" class="aui-list-view-cell aui-indexed-list-view-group">　</li>
+			        <li class="aui-list-view-cell">
+			        	<img style="width: 27px;height: 27px;" class="aui-img-object aui-pull-right" src="../images/lironghao.png">
+		                <i class="aui-iconfont aui-icon-hotfill aui-bg-success"></i>圈圈
+		            </li>
+			        <li style="padding: 0px 15px;" class="aui-list-view-cell aui-indexed-list-view-group">　</li>
+			        <li class="aui-list-view-cell">
+		                <i class="aui-iconfont aui-icon-scan aui-bg-info"></i>扫扫
+		            </li>
+		            <li class="aui-list-view-cell">
+		                <i class="aui-iconfont aui-icon-we aui-bg-primary"></i>摇摇
+		            </li>
+			        <li style="padding: 0px 15px;" class="aui-list-view-cell aui-indexed-list-view-group">　</li>
+			        <li class="aui-list-view-cell">
+		                <i class="aui-iconfont aui-icon-locationfill aui-bg-danger"></i>附近
+		            </li>
+		            <li class="aui-list-view-cell">
+		                <i class="aui-iconfont aui-icon-baby aui-bg-info"></i>瓶子
+		            </li>
+				</ul>
+			</div>
+		</div>
+		<div id="mine" class="mui-control-content">
+			<div class="aui-searchbar-wrap fixed" id="group-search">
+		    </div>
+			<div class="aui-indexed-list">
+			    <ul class="aui-list-view aui-indexed-list-view aui-in">
+			        <li style="padding: 0px 15px;" class="aui-list-view-cell aui-indexed-list-view-group">　</li>
+			        <li class="aui-list-view-cell aui-img">
+			        	<img class="aui-img-object aui-pull-left" src="../images/user.png">
+			            <div class="aui-img-body">
+			            	actor
+			                <p class='aui-ellipsis-2'>简信号：Equalr</p>
+			                <img style="width: 27px;height: 27px;margin-top: -29px;" class="aui-img-object aui-pull-right" src="../images/erweima.png">
+			            </div>
+			        </li>
+			        <li style="padding: 0px 15px;" class="aui-list-view-cell aui-indexed-list-view-group">　</li>
+			        <li class="aui-list-view-cell">
+		                <i class="aui-iconfont aui-icon-pic aui-bg-danger"></i>相册
+		            </li>
+		            <li class="aui-list-view-cell">
+		                <i class="aui-iconfont aui-icon-favor aui-bg-success"></i>收藏
+		            </li>
+			        <li style="padding: 0px 15px;" class="aui-list-view-cell aui-indexed-list-view-group">　</li>
+			        <li class="aui-list-view-cell">
+		                <i class="aui-iconfont aui-icon-recharge aui-bg-info"></i>钱包
+		            </li>
+		            <li class="aui-list-view-cell">
+		                <i class="aui-iconfont aui-icon-pay aui-bg-info"></i>卡券
+		            </li>
+		            <li style="padding: 0px 15px;" class="aui-list-view-cell aui-indexed-list-view-group">　</li>
+			        <li class="aui-list-view-cell">
+		                <i class="aui-iconfont aui-icon-emoji aui-bg-warning"></i>表情
+		            </li>
+		            <li style="padding: 0px 15px;" class="aui-list-view-cell aui-indexed-list-view-group">　</li>
+			        <li class="aui-list-view-cell">
+		                <i class="aui-iconfont aui-icon-settings aui-bg-info"></i>设置
+		            </li>
+				</ul>
+			</div>
+		</div>
+	</div><script type="text/javascript" src="../aui/js/api.js" ></script>
+	<script type="text/javascript" src="../aui/js/aui-tap.js" ></script>
+	<script type="text/javascript" src="../aui/js/aui-indexed-list.js" ></script>
+</body>
+</html>

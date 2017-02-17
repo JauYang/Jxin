@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		
+		<link rel="stylesheet" href="css/login/default.css" />
+		<link rel="stylesheet" href="css/login/styles.css" />
+	</head>
+
+	<body style="background-color: #665757;">
+		<article style="padding-top: 120px;" class="htmleaf-container">
+			<div class="panel-lite">
+			  <h1 style="color: #FFFFFF;">简信</h1>
+			  <div class="form-group">
+			  </div>
+			  <div class="form-group">
+			  </div>
+			  <button onclick="toLogin()" class="login_btn">登录</button>
+			  <button onclick="toRegister()" class="login_btn">注册</button>
+			</div>
+		</article>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.plusReady(function() {
+			    //首页返回键处理
+			    //处理逻辑：1秒内，连续两次按返回键，则退出应用；
+			    var first = null;
+			    plus.key.addEventListener('backbutton', function(){
+			        //首次按键，提示‘再按一次退出应用’
+			        if(!first){
+			            first = new Date().getTime();
+			            mui.toast('再按一次退出应用');
+			            setTimeout(function(){
+			                first = null;
+			            },1000);
+			        }else{
+			            if(new Date().getTime()-first<1000){
+			                plus.runtime.quit();
+			            }
+			        }
+			        plus.runtime.quit();
+			    }, false);
+			});
+			function toLogin(){
+				mui.openWindow({
+					url:'login.html',
+					waiting: {  
+				        autoShow: false
+				    }
+				});
+			}
+			function toRegister(){
+				mui.openWindow({
+					url:'register.html',
+					waiting: {  
+				        autoShow: false
+				    }
+				});
+			}
+		</script>
+	</body>
+
+</html>
